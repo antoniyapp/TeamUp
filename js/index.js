@@ -1,12 +1,38 @@
 /**
  * Created by Antoniya on 3.12.2017 г..
  */
-
+function createTable(res,groups){//array
+	alert('yes');
+	console.log(JSON.stringify(res));
+	 let table=$('<table></table>');
+	 let thead=$('<thead></thead>').appendTo(table);
+	 $('<th></th>').appendTo(thead);
+	 for(let i=0;i<groups;i++){
+			 $('<th></th>').text(''+(i+1)).appendTo(thead);
+		 }
+		 
+	 for(let person in res){
+		 let row=$('<tr></tr').appendTo(table);
+		 let num=Number(person)+1;
+		 let rowHead=$('<th></th>').text(''+num).appendTo(row);
+		 for(let j=0;j<groups;j++){
+			 if(res[person]===(j+1)){
+				 $('<td></td>').attr('style','background-color:red').appendTo(row);
+			 }
+			 else {
+				 $('<td></td>').appendTo(row);
+			 }
+		 }
+		 alert('res');
+	 }
+	  table.appendTo("#res");
+ }
+ 
 function showResult() {
     $('#load').hide();
     $('#result').show();
     let res= shufflePeople($('#people').val(),$('#groups').val());
-    $('#res').html(res);
+    createTable(res,$('#groups').val());
 }
 function showHide(people,groups) {
     if(isNaN(people)||isNaN(groups)) {

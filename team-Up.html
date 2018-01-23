@@ -14,7 +14,7 @@
         window.addEventListener('shake', function(){
             let res= shufflePeople($('#people').val(),$('#groups').val());
             $('#result').show();
-            $('#res').html(res);
+            createTable(res,$('#groups').val());
             alert("Shaked");
         }, false);
 
