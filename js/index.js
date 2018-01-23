@@ -5,8 +5,9 @@ function createTable(res,groups){//array
 	alert('yes');
 	console.log(JSON.stringify(res));
 	 let table=$('<table></table>');
+	 let cap=$('<caption></caption>').text("Groups").appendTo(table);
 	 let thead=$('<thead></thead>').appendTo(table);
-	 $('<th></th>').appendTo(thead);
+	 $('<th></th>').text("Person").appendTo(thead);
 	 for(let i=0;i<groups;i++){
 			 $('<th></th>').text(''+(i+1)).appendTo(thead);
 		 }
@@ -17,7 +18,7 @@ function createTable(res,groups){//array
 		 let rowHead=$('<th></th>').text(''+num).appendTo(row);
 		 for(let j=0;j<groups;j++){
 			 if(res[person]===(j+1)){
-				 $('<td></td>').attr('style','background-color:red').appendTo(row);
+				 $('<td></td>').attr('style','background-color:#af0052').appendTo(row);
 			 }
 			 else {
 				 $('<td></td>').appendTo(row);
