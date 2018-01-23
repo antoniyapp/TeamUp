@@ -1,0 +1,44 @@
+#stop {
+    background: black;
+    height:50px;
+
+}
+#stop > a {
+    background-color: #af0052;
+    position: relative;
+    top:15px;
+    padding: 10px 20px;
+    right:45%;
+    border-radius: 5px;
+    text-decoration: none;
+    color:#e5dadf;
+}
+.btn {
+    background-color: black;
+    color:white;
+    position: relative;
+    top:20px;
+    font-size: 20px;
+    padding: 30px 120px;
+    border-radius: 50px;
+}
+#main-area {
+    height:100%;
+    border: 50px solid;
+    border-image: url("http://maxpixel.freegreatpicture.com/static/photo/1x/Pattern-Abstract-Background-Polygon-Textures-Color-1152783.jpg") 30;
+}
+#input-area {
+    position:relative;
+    top:100px;
+    font-size: 30px;
+    background: white;
+}
+input {
+    margin: 1em 0 1em 0;
+    border:2px solid #888;
+    padding:0.5em 0.5em 0.5em;
+    color:#555656;
+    text-align: center;
+    font-size:20px;
+    border-radius: 25px;
+}

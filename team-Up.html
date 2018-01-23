@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team-Up</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/alexgibson/shake.js/master/shake.js"></script>
+    <script>
+        //listen to shake event
+        var shakeEvent = new Shake({threshold: 15});
+        shakeEvent.start();
+        window.addEventListener('shake', function(){
+            let res= shufflePeople($('#people').val(),$('#groups').val());
+            $('#result').show();
+            $('#res').html(res);
+            alert("Shaked");
+        }, false);
+
+        //stop listening
+        function stopShake(){
+            shakeEvent.stop();
+        }
+
+        //check if shake is supported or not.
+        if(!("ondevicemotion" in window)){alert("Not Supported");}
+    </script>
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+<header id="stop">
+    <a href="index.html">Stop</a>
+    </header>
+
+<section id="input-area" class="wrap">
+    <div id="error"></div>
+<p>Type in the number of people</p>
+<input id="people" name="people"type="text" placeholder="e.g 8" required>
+<p>Type in the number of groups you want to be teamed up into</p>
+<input id="groups" name="groups" type="text" placeholder="e.g 5" required>
+<br>
+    <button class="btn" onclick="showHide($('#people').val(),$('#groups').val())">Next</button>
+    </section>
+<section id="order" style="display:none;"  class="wrap">
+    <h1 style="font-size:2em;">Arrange in some order</h1>
+    <div id="options">
+        <ul id="arrange">
+            <li><img id="one"onclick="initGroups($('#people').val(),$('#groups').val())" src="https://st2.depositphotos.com/1010751/9092/v/950/depositphotos_90921236-stock-illustration-hands-in-circle-arrange.jpg"></li>
+            <li><img id="two"onclick="initGroups($('#people').val(),$('#groups').val())" src="https://www.colourbox.com/preview/2236139-cmyk-people-standing-in-a-row-3d-objects-isolated-on-the-white-background.jpg"></li>
+            </ul>
+    </div>
+    <button class="btn" onclick="initGroups($('#people').val(),$('#groups').val())">Next</button>
+</section>
+<section id="shake" style="display: none" class="show-mobile wrap">
+    <h1>Shake your device if you want to find out your groups!</h1>
+    </section>
+<section id="load" style="display: none" class="show-desktop wrap">
+    <h2>Click on the image to find out your groups!</h2>
+<button id="loading" onclick="showResult($('#people').val(),$('#groups').val())"><img src="https://inspirationfeeed.files.wordpress.com/2014/09/gif9.gif"></button>
+</section>
+<section id="result" style="display: none" class="wrap">
+    <h1>Congrats! You have been TEAMED UP!</h1>
+    <p id="res"></p>
+    </section>
+</body>
+</html>
