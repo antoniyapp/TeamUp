@@ -194,6 +194,10 @@ th {
     .btn {
         padding: 15px 120px;
     }
+	table {
+    left:10%;
+    width: 20%;
+    }
 }
 
 
