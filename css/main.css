@@ -6,6 +6,7 @@
 #index{
     background-image: url("http://maxpixel.freegreatpicture.com/static/photo/1x/Pattern-Abstract-Background-Polygon-Textures-Color-1152783.jpg") ;
 }
+
 body {
     font-family: Lato;
     font-weight: 800;
@@ -135,10 +136,34 @@ button,a {
 #one:hover,#two:hover{
     transform: scale(1.1);
 }
+
 #res {
-    position: relative;
-    top:3em;
-    font-size: 3em;
+
+	font-size:2em;
+	padding-top:2em;
+	
+}
+table {
+   position:relative;
+   left:30%;
+    border-collapse: collapse;
+	text-align:center;
+    width: 40%;
+}
+
+td,th {
+    border: 1px solid #ddd;
+    padding: 0.2em;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+ tr:hover {background-color: #ddd;}
+th {
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    background-color: #af0052;
+    color: white;
 }
 
 @media screen and (min-device-width: 320px) and (max-device-width: 600px) {

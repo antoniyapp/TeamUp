@@ -2,10 +2,10 @@
  * Created by Antoniya on 3.12.2017 г..
  */
 function createTable(res,groups){//array
-	alert('yes');
+
 	console.log(JSON.stringify(res));
 	 let table=$('<table></table>');
-	 let cap=$('<caption></caption>').text("Groups").appendTo(table);
+	 let cap=$('<caption></caption>').text("Team").attr('style','text-align:center').appendTo(table);
 	 let thead=$('<thead></thead>').appendTo(table);
 	 $('<th></th>').text("Person").appendTo(thead);
 	 for(let i=0;i<groups;i++){
@@ -24,7 +24,7 @@ function createTable(res,groups){//array
 				 $('<td></td>').appendTo(row);
 			 }
 		 }
-		 alert('res');
+		
 	 }
 	  table.appendTo("#res");
  }
